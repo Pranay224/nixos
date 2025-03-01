@@ -19,7 +19,18 @@
     # Shell utils
     tree
     file
-    btop
+    (btop.overrideAttrs (oldAttrs: let
+      themeFile = builtins.fetchurl {
+        url = "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_mocha.theme";
+        sha256 = "0i263xwkkv8zgr71w13dnq6cv10bkiya7b06yqgjqa6skfmnjx2c";
+      };
+    in {
+      postPatch = ''
+        mkdir -p $out/share/btop/themes
+        cp ${themeFile} $out/share/btop/themes
+      '';
+      doCheck = false;
+    }))
 
     # Common languages
     python3
