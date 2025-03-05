@@ -13,12 +13,24 @@
     rar
     p7zip
 
+    # Pentesting tools
+    nmap
+    sqlmap
+    binwalk
+    exiftool
+    ripmime
+    dig
+    whois
+
     # Office suite
     libreoffice
 
     # Shell utils
     tree
+    ripgrep
     file
+    feh
+    neofetch
     (btop.overrideAttrs (oldAttrs: let
       themeFile = builtins.fetchurl {
         url = "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_mocha.theme";
