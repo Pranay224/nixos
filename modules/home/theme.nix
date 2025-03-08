@@ -6,7 +6,7 @@
       gtk.enable = true;
       package = pkgs.catppuccin-cursors.mochaDark;
       name = "catppuccin-mocha-dark-cursors";
-      size = 32;
+      size = 24;
     };
     sessionVariables = {
       XCURSOR_SIZE = "24";

@@ -11,12 +11,6 @@
       "$terminal" = "alacritty";
       "$menu" = "rofi -modi drun,run -show drun";
 
-      # env = [
-        # "XCURSOR_SIZE,24"
-        # "QT_QPA_PLATFORMTHEME,qt5ct"
-        # "WLR_NO_HARDWARE_CURSORS,1"
-      # ];
-  
       input = {
         kb_layout = "us";
         kb_variant = "";
@@ -155,8 +149,7 @@
         "waybar"
         "rfkill unblock wlan"
         "hypridle"
-        "sway-audio-idle-inhibit"
-        "hyprctl setcursor catppuccin-mocha-dark-cursors 32"
+        "hyprctl setcursor catppuccin-mocha-dark-cursors 24"
       ];
     };
   };
