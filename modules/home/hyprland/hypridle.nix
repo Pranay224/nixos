@@ -1,33 +1,41 @@
+{ pkgs, ... }:
+
 let
-  lock_cmd = builtins.toFile "lock_cmd.sh" "
-    #!/usr/bin/env bash\n
-    
-    TMPBG=/tmp/bg.png\n
-    grim $TMPBG\n
-    pidof hyprlock || hyprlock\n
-    rm $TMPBG\n
-  ";
-  post_sleep = builtins.toFile "post_sleep.sh" "
-    hyprctl dispatch dpms on\n
-    rfkill unblock wlan\n
-  ";
+  lock_cmd = pkgs.writeShellApplication {
+    name = "lock_cmd";
+    runtimeInputs = with pkgs; [ grim ];
+    text = ''
+     TMPBG=/tmp/bg.png
+     grim $TMPBG
+     pidof hyprlock || hyprlock
+     rm $TMPBG
+    '';
+  };
+
+  post_sleep = pkgs.writeShellApplication {
+    name = "post_sleep";
+    text = ''
+     hyprctl dispatch dpms on
+     rfkill unblock wlan
+    '';
+  };
 in
 {
   services.hypridle = {
     enable = true;
     settings = {
       general = {
-          lock_cmd = "sh ${lock_cmd}";
+          lock_cmd = "${lock_cmd}/bin/lock_cmd";
           before_sleep_cmd = "loginctl lock-session";
-          after_sleep_cmd = "sh ${post_sleep}";
+          after_sleep_cmd = "${post_sleep}/bin/post_sleep";
           ignore_dbus_inhibit = false;
       };
       
       listener = [
         {
             timeout = 150;
-            on-timeout = "brightnessctl -s set 10";
-            on-resume = "brightnessctl -r";
+            on-timeout = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10";
+            on-resume = "${pkgs.brightnessctl}/bin/brightnessctl -r";
         }
         {
             timeout = 300;

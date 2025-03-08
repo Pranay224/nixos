@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -85,7 +87,18 @@
         "opacity 1 override, class: (soffice)"
       ];
 
-      bind = [
+      bind = 
+      let
+        print_cmd = pkgs.writeShellApplication {
+          name = "print_cmd";
+          runtimeInputs = with pkgs; [ grim slurp wl-clipboard ];
+
+          text = ''
+            grim -g "$(slurp)" - | wl-copy
+          '';
+        };
+      in
+      [
         "$mod, Q, exec, $terminal"
         "$mod, C, killactive"
         "$mod, M, exit"
@@ -97,6 +110,7 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+        ", Print, exec, ${print_cmd}/bin/print_cmd"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -125,7 +139,6 @@
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
 
-        ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
         "$mod, F, fullscreen"
       ];
 
@@ -136,8 +149,8 @@
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 10%+ -l 1.5"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 10%- -l 1.5"
-        ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
-        ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+        ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%-"
+        ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
       ];
 
       bindm = [

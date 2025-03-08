@@ -2,11 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    # Desktop utils
-    grim
-    slurp
-    brightnessctl
-
     # Archiving utils
     zip
     unzip
