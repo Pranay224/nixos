@@ -17,6 +17,9 @@
     dig
     whois
 
+    # Gaming utils
+    steam-run
+
     # Office suite
     libreoffice
 

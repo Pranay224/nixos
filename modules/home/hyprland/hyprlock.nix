@@ -49,16 +49,16 @@
           halign = "center";
           valign = "top";
         }
-	{
-	  monitor = "";
-	  text = "Welcome back, $USER";
-	  color = "$foreground";
-	  font_size = 25;
-	  font_family = "FiraCode Nerd Font";
-	  position = "0, -40";
-	  halign = "center";
-	  valign = "center";
-	}
+        {
+          monitor = "";
+          text = "Welcome back, $USER";
+          color = "$foreground";
+          font_size = 25;
+          font_family = "FiraCode Nerd Font";
+          position = "0, -40";
+          halign = "center";
+          valign = "center";
+        }
       ];
     };
   }; 
