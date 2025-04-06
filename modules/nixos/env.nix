@@ -10,5 +10,6 @@
     vim
     wget
     wl-clipboard
+    wireshark
   ];
 }

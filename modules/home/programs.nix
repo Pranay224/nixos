@@ -45,9 +45,13 @@
     # Common languages
     python3
 
-    # qt theming libraries
+    # qt theming
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
+    (catppuccin-kvantum.override {
+     accent = "blue";
+     variant = "mocha";
+     })
   ];
 
   programs = {

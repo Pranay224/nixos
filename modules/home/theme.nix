@@ -1,5 +1,11 @@
 { pkgs, ... }:
-
+let
+  variant = "mocha";
+  accent = "blue";
+  kvantumThemePackage = pkgs.catppuccin-kvantum.override {
+    inherit variant accent;
+  };
+in
 {
   home = {
     pointerCursor = {
@@ -17,10 +23,16 @@
   qt = {
     enable = true;
     platformTheme.name = "qtct";
-    style = {
-      package = pkgs.catppuccin-qt5ct;
-      name = "Catppuccin Mocha";
-    };
+    style.name = "kvantum";
+  };
+
+  xdg.configFile = {
+    "Kvantum/kvantum.kvconfig".text = ''
+      [General]
+      theme=catppuccin-${variant}-${accent}
+    '';
+
+    "Kvantum/catppuccin-${variant}-${accent}".source = "${kvantumThemePackage}/share/Kvantum/catppuccin-${variant}-${accent}";
   };
 
   gtk = {
