@@ -60,6 +60,15 @@
             handlers.__raw = "handlers";
           };
         };
+
+        jdtls = {
+          enable = true;
+          autostart = true;
+          extraOptions = {
+            handlers.__raw = "handlers";
+          };
+        };
+
       };
 
       keymaps = {

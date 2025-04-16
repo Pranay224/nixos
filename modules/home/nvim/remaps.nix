@@ -1,12 +1,12 @@
 {
   programs.nixvim = {
     globals.mapleader = " ";
-    
+
     keymaps = [
       {
-	key = "<leader>pv";
-	mode = "n";
-	action = "<cmd>Ex<CR>";
+        key = "<leader>pv";
+        mode = "n";
+        action = "<cmd>Ex<CR>";
       }
       {
         key = "<leader>of";

@@ -11,25 +11,25 @@
 
       keymaps = {
         "<leader>fb" = {
-          action = "file_browser path=%:p:h select_buffer=true<CR>";
+          action = "file_browser path=%:p:h select_buffer=true";
           mode = "n";
           options.noremap = true;
         };
 
         "<leader>sr" = {
-          action = "registers<CR>";
+          action = "registers";
           mode = "n";
           options.noremap = true;
         };
 
         "<leader>ff" = {
-          action = "find_files<CR>";
+          action = "find_files";
           mode = "n";
           options.noremap = true;
         };
 
         "<leader>gs" = {
-          action = "live_grep<CR>";
+          action = "live_grep";
           mode = "n";
           options.noremap = true;
         };
