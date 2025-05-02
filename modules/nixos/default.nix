@@ -7,6 +7,5 @@
     ./env.nix
     ./fonts.nix
     ./programs.nix
-    ./nh.nix
   ];	
 }
