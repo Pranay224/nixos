@@ -13,6 +13,7 @@
     ./hyprland
     ./nvim
     ./direnv.nix
+    ./btop.nix
   ];
 
   programs.home-manager.enable = true;
