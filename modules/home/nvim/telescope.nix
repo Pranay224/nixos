@@ -1,8 +1,11 @@
 {
   programs.nixvim = {
     plugins.web-devicons.enable = true;
+    plugins.lz-n.enable = true;
     plugins.telescope = {
       enable = true;
+
+      lazyLoad.settings.cmd = "Telescope";
 
       extensions = {
         file-browser.enable = true;

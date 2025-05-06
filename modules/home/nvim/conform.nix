@@ -4,6 +4,8 @@
   programs.nixvim = {
     plugins.conform-nvim = {
       enable = true;
+      lazyLoad.settings.event = [ "BufReadPre" "BufNewFile" ];
+
       settings = {
         formatters = {
           clang-format = { command = "${pkgs.clang-tools}/bin/clang-format"; };

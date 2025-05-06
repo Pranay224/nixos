@@ -2,6 +2,8 @@
   programs.nixvim = {
     plugins.noice = {
       enable = true;
+      lazyLoad.settings.event = [ "BufWinEnter" ];
+
       settings = {
         presets = {
           bottom_search = true;

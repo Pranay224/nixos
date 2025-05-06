@@ -7,5 +7,6 @@
     ./env.nix
     ./fonts.nix
     ./programs.nix
+    ./postgres.nix
   ];	
 }

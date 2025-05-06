@@ -2,7 +2,9 @@
   programs.nixvim = {
     plugins.lsp = {
       enable = true;
-      inlayHints = true;
+      inlayHints = false;
+
+      lazyLoad.settings.event = [ "BufReadPre" "BufNewFile" ];
 
       preConfig = ''
         local border = {
