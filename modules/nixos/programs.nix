@@ -6,6 +6,7 @@
       enable = true;
       dumpcap.enable = true;
     };
+    adb.enable = true;
   };
   
   services = {
