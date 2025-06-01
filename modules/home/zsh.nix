@@ -24,8 +24,7 @@ in
     enableCompletion = true;
 
     history = {
-      append = true;
-      expireDuplicatesFirst = true;
+      extended = true;
     };
 
     shellAliases = {

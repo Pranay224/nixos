@@ -28,6 +28,7 @@
         };
   
         sensitivity = 0;
+        accel_profile = "flat";
       };
 
       general = {
