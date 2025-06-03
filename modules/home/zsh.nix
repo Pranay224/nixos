@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   typewritten-theme = pkgs.fetchFromGitHub {
     owner = "reobin";
@@ -26,6 +26,10 @@ in
     history = {
       extended = true;
     };
+
+    initContent = lib.mkOrder 550 ''
+      fpath+="/home/pranay/.zfunc"
+    '';
 
     shellAliases = {
       "@" = "history";

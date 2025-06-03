@@ -25,7 +25,7 @@
           home-manager.users.pranay = {
             imports = [
               nixvim.homeManagerModules.nixvim
-              ./modules/home/default.nix
+              ./modules/home
             ]; 
           };
         }

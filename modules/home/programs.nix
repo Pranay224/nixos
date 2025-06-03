@@ -16,6 +16,8 @@
     ripmime
     dig
     whois
+    burpsuite
+    aircrack-ng
     (john.overrideAttrs (old: {
        NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -march=native";
      }))

@@ -1,9 +1,9 @@
 {
   services.hyprpaper = {
-    enable = true;
+    enable = false;
     settings = {
-      preload = [ "/home/pranay/Pictures/nord_02.png" ];
-      wallpaper = [ "eDP-1,/home/pranay/Pictures/nord_02.png" ];
+      preload = [ "/home/pranay/Pictures/wallpaper.png" ];
+      wallpaper = [ "eDP-1,/home/pranay/Pictures/wallpaper.png" ];
       splash = false;
     };
   };
