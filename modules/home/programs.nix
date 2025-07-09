@@ -17,12 +17,14 @@
     dig
     whois
     burpsuite
+    ffuf
+    thc-hydra
     aircrack-ng
     (john.overrideAttrs (old: {
-       NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -march=native";
-     }))
+      NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -march=native";
+    }))
 
-    # Gaming utils
+    # FHS compliance workaround
     steam-run
 
     # Office suite
@@ -35,6 +37,7 @@
     feh
     neofetch
     usbutils
+    nix-index
 
     # Common languages
     python3
@@ -43,9 +46,9 @@
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
     (catppuccin-kvantum.override {
-     accent = "blue";
-     variant = "mocha";
-     })
+      accent = "blue";
+      variant = "mocha";
+    })
   ];
 
   programs = {
