@@ -2,7 +2,10 @@
   networking = {
     hostName = "cypher";
 
-    nameservers = [ "127.0.0.1" "::1" ];
+    nameservers = [
+      "127.0.0.1"
+      "::1"
+    ];
     networkmanager = {
       enable = true;
       dns = "none";
@@ -26,7 +29,11 @@
         minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
       };
 
-      server_names = [ "cloudflare-family" "cloudflare-family-ipv6" ];
+      # server_names = [ "cloudflare-family" "cloudflare-family-ipv6" ];
+      server_names = [
+        "cloudflare"
+        "cloudflare-ipv6"
+      ];
 
     };
   };
@@ -35,6 +42,6 @@
     enable = true;
     powerOnBoot = true;
   };
-  
+
   time.timeZone = "Asia/Kolkata";
 }
