@@ -1,6 +1,6 @@
 {
   description = "NixOS config flake";
-  
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
@@ -12,24 +12,33 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  
-  outputs = {self, nixpkgs, home-manager, nixvim, ...}@inputs: {
-    nixosConfigurations.cypher = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/cypher/configuration.nix
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.pranay = {
-            imports = [
-              nixvim.homeManagerModules.nixvim
-              ./modules/home
-            ]; 
-          };
-        }
-      ];
+
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixvim,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations.cypher = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/cypher/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.pranay = {
+              imports = [
+                nixvim.homeManagerModules.nixvim
+                ./modules/home
+              ];
+            };
+          }
+        ];
+      };
     };
-  };
 }

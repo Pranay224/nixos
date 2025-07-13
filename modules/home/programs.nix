@@ -18,6 +18,7 @@
     whois
     burpsuite
     ffuf
+    crunch
     thc-hydra
     aircrack-ng
     (john.overrideAttrs (old: {
