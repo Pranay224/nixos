@@ -19,6 +19,11 @@
       enable = true;
       pulse.enable = true;
     };
+
+    getty = {
+      autologinOnce = true;
+      autologinUser = "pranay";
+    };
   };
 
   environment.systemPackages = with pkgs; [

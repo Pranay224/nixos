@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +21,7 @@
     {
       self,
       nixpkgs,
+      disko,
       home-manager,
       nixvim,
       ...
@@ -28,6 +33,8 @@
         modules = [
           ./hosts/cypher/configuration.nix
           home-manager.nixosModules.home-manager
+          disko.nixosModules.disko
+
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

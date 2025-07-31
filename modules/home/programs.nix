@@ -21,6 +21,8 @@
     crunch
     thc-hydra
     aircrack-ng
+    gef
+    radare2
     (john.overrideAttrs (old: {
       NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -march=native";
     }))
@@ -55,5 +57,12 @@
   programs = {
     firefox.enable = true;
     bat.enable = true;
+
+    eza = {
+      enable = true;
+      enableZshIntegration = true;
+      git = true;
+      icons = "auto";
+    };
   };
 }
