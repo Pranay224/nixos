@@ -6,13 +6,21 @@
       "127.0.0.1"
       "::1"
     ];
+
     networkmanager = {
       enable = true;
       dns = "none";
+      ethernet.macAddress = "random";
+      wifi = {
+        macAddress = "random";
+        scanRandMacAddress = true;
+      };
     };
 
     firewall.enable = false;
   };
+
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   services.dnscrypt-proxy2 = {
     enable = true;

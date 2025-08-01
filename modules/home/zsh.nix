@@ -39,7 +39,6 @@ in
       "hyprland" = "Hyprland";
       "cat" = "bat";
     };
-    
 
     oh-my-zsh = {
       enable = true;

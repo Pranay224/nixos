@@ -8,5 +8,5 @@
     ./fonts.nix
     ./programs.nix
     ./postgres.nix
-  ];	
+  ];
 }
