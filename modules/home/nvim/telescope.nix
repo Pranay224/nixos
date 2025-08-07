@@ -8,7 +8,10 @@
       lazyLoad.settings.cmd = "Telescope";
 
       extensions = {
-        file-browser.enable = true;
+        file-browser = {
+          enable = true;
+          settings.hijack_netrw = true;
+        };
         fzf-native.enable = true;
       };
 

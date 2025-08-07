@@ -4,24 +4,27 @@
       enable = true;
       inlayHints = false;
 
-      lazyLoad.settings.event = [ "BufReadPre" "BufNewFile" ];
+      lazyLoad.settings.event = [
+        "BufReadPre"
+        "BufNewFile"
+      ];
 
       preConfig = ''
         local border = {
-			    { "╭", "FloatBorder" },
-			    { "─", "FloatBorder" },
-			    { "╮", "FloatBorder" },
-			    { "│", "FloatBorder" },
-			    { "╯", "FloatBorder" },
-			    { "─", "FloatBorder" },
-			    { "╰", "FloatBorder" },
-			    { "│", "FloatBorder" },
-		    }
+          { "╭", "FloatBorder" },
+          { "─", "FloatBorder" },
+          { "╮", "FloatBorder" },
+          { "│", "FloatBorder" },
+          { "╯", "FloatBorder" },
+          { "─", "FloatBorder" },
+          { "╰", "FloatBorder" },
+          { "│", "FloatBorder" },
+        }
 
-		    local handlers = {
-			    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-			    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-		    }
+        local handlers = {
+          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+          ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+        }
 
         vim.cmd([[ highlight DiagnosticVirtualTextWarn guibg=NONE ]])
         vim.cmd([[ highlight DiagnosticVirtualTextInfo guibg=NONE ]])
@@ -35,7 +38,6 @@
           },
           float = { border = border },
         })
-
       '';
 
       servers = {
@@ -55,7 +57,7 @@
           };
         };
 
-        nil_ls = {
+        nixd = {
           enable = true;
           autostart = true;
           extraOptions = {

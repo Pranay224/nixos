@@ -9,13 +9,13 @@
 
     clipboard.providers.wl-copy.enable = true;
 
-    autoCmd = [
-      {
-        event = [ "BufWritePre" ];
-        pattern = "*";
-        callback.__raw = "vim.lsp.buf.format";
-      }
-    ];
+    # autoCmd = [
+    #   {
+    #     event = [ "BufWritePre" ];
+    #     pattern = "*";
+    #     callback.__raw = "vim.lsp.buf.format";
+    #   }
+    # ];
 
     performance = {
       byteCompileLua = {
