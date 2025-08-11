@@ -19,7 +19,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       disko,
       home-manager,
@@ -40,7 +39,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.pranay = {
               imports = [
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
                 ./modules/home
               ];
             };

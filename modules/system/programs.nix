@@ -12,6 +12,9 @@
     };
   };
 
+  users.groups.adbusers.members = [ "pranay" ];
+  users.groups.wireshark.members = [ "pranay" ];
+
   services = {
     tlp.enable = true;
 

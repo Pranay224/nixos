@@ -4,7 +4,10 @@
   users = {
     users.pranay = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "wireshark" "adbusers" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
     };
     defaultUserShell = pkgs.zsh;
   };
