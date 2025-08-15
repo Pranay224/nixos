@@ -43,6 +43,7 @@
     neofetch
     usbutils
     nix-index
+    comma
 
     # Common languages
     python3
