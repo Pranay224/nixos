@@ -25,16 +25,24 @@
       nixvim,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+      overlays = import ./overlays;
+    in
     {
       nixosConfigurations.cypher = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        inherit system;
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./hosts/cypher/configuration.nix
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
 
           {
+            nixpkgs.overlays = overlays;
+
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.pranay = {

@@ -8,6 +8,12 @@
     rar
     p7zip
 
+    # FHS compliance workaround
+    steam-run
+
+    # Office suite
+    libreoffice
+
     # Pentesting tools
     nmap
     sqlmap
@@ -25,15 +31,8 @@
     radare2
     metasploit
     exploitdb
-    (john.overrideAttrs (old: {
-      NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -march=native";
-    }))
-
-    # FHS compliance workaround
-    steam-run
-
-    # Office suite
-    libreoffice
+    responder-patched
+    john-optimized
 
     # Shell utils
     tree
@@ -55,6 +54,7 @@
       accent = "blue";
       variant = "mocha";
     })
+
   ];
 
   programs = {
