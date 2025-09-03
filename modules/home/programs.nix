@@ -22,10 +22,10 @@
     ripmime
     dig
     whois
-    burpsuite
     ffuf
     crunch
     thc-hydra
+    burpsuite
     aircrack-ng
     gef
     radare2
@@ -33,6 +33,7 @@
     exploitdb
     responder-patched
     john-optimized
+    python3Packages.impacket
 
     # Shell utils
     tree

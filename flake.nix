@@ -15,6 +15,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    burpsuite-patched = {
+      url = "path:/home/pranay/nixos/flakes/burpsuite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,7 +31,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      overlays = import ./overlays;
+      overlays = import ./overlays { inherit system inputs; };
     in
     {
       nixosConfigurations.cypher = nixpkgs.lib.nixosSystem {
@@ -45,6 +49,7 @@
 
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.pranay = {
               imports = [
                 nixvim.homeModules.nixvim

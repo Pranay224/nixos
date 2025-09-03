@@ -10,5 +10,15 @@
         swtpm.enable = true;
       };
     };
+
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
   };
 }
