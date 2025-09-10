@@ -11,14 +11,11 @@
       };
     };
 
-    docker = {
+    containers.enable = true;
+    podman = {
       enable = true;
-      storageDriver = "btrfs";
-
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
     };
   };
 }

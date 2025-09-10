@@ -16,6 +16,7 @@
 
     # Pentesting tools
     nmap
+    netcat-gnu
     sqlmap
     binwalk
     exiftool

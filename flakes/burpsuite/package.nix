@@ -9,7 +9,7 @@
 }:
 
 let
-  version = "2025.1.1";
+  version = "2025.7.4";
 
   productName = "pro";
   productDesktop = "BurpSuite Professional";
