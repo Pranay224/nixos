@@ -34,5 +34,6 @@
     wget
     wl-clipboard
     wireshark
+    openvpn
   ];
 }

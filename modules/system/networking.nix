@@ -22,7 +22,7 @@
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = true;
     settings = {
       ipv6_servers = true;
@@ -37,7 +37,6 @@
         minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
       };
 
-      # server_names = [ "cloudflare-family" "cloudflare-family-ipv6" ];
       server_names = [
         "cloudflare"
         "cloudflare-ipv6"

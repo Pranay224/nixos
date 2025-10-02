@@ -24,6 +24,7 @@
     dig
     whois
     ffuf
+    amass
     crunch
     thc-hydra
     burpsuite
@@ -44,6 +45,7 @@
     neofetch
     usbutils
     nix-index
+    net-tools
     comma
 
     # Common languages

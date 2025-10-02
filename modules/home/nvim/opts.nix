@@ -26,6 +26,7 @@
 
       scrolloff = 10;
       signcolumn = "number";
+      winborder = "rounded";
 
       updatetime = 50;
     };
