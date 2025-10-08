@@ -7,13 +7,13 @@
         ]
       },
       "locked": {
-        "lastModified": 1758270507,
-        "narHash": "sha256-axobqz56CRP5HDm54xSoRZjG4mSd8YkU0OglgMXyYCs=",
-        "path": "/home/pranay/nixos/flakes/burpsuite",
+        "lastModified": 1759899479,
+        "narHash": "sha256-PFRR4c2hDe2donMrjLPJ0o3LChLVm4f+Rwx7uIyvIxE=",
+        "path": "/home/pranay/nixos/packages/burpsuite",
         "type": "path"
       },
       "original": {
-        "path": "/home/pranay/nixos/flakes/burpsuite",
+        "path": "/home/pranay/nixos/packages/burpsuite",
         "type": "path"
       }
     },

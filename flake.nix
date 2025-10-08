@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     burpsuite-patched = {
-      url = "path:/home/pranay/nixos/flakes/burpsuite";
+      url = "path:/home/pranay/nixos/packages/burpsuite";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

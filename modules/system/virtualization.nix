@@ -5,10 +5,7 @@
   virtualisation = {
     libvirtd = {
       enable = true;
-      qemu = {
-        ovmf.enable = true;
-        swtpm.enable = true;
-      };
+      qemu.swtpm.enable = true;
     };
 
     containers.enable = true;
