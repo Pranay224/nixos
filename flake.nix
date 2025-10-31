@@ -15,6 +15,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     burpsuite-patched = {
       url = "path:/home/pranay/nixos/packages/burpsuite";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,6 +31,7 @@
       disko,
       home-manager,
       nixvim,
+      nix-index-database,
       ...
     }@inputs:
     let
@@ -53,6 +58,7 @@
             home-manager.users.pranay = {
               imports = [
                 nixvim.homeModules.nixvim
+                nix-index-database.homeModules.nix-index
                 ./modules/home
               ];
             };

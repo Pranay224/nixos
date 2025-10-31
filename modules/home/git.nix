@@ -1,9 +1,11 @@
 {
   programs.git = {
     enable = true;
-    userEmail = "ahluwaliapranay727@gmail.com";
-    userName = "Pranay A.";
-    extraConfig = {
+    settings = {
+      user = {
+        email = "ahluwaliapranay727@gmail.com";
+        name = "Pranay A.";
+      };
       init.defaultBranch = "master";
     };
   };

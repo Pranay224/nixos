@@ -29,7 +29,6 @@
     thc-hydra
     burpsuite
     aircrack-ng
-    gef
     radare2
     metasploit
     exploitdb
@@ -44,9 +43,7 @@
     feh
     neofetch
     usbutils
-    nix-index
     net-tools
-    comma
 
     # Common languages
     python3
@@ -64,6 +61,8 @@
   programs = {
     firefox.enable = true;
     bat.enable = true;
+    nix-index-database.comma.enable = true;
+    nix-index.enableZshIntegration = false;
 
     eza = {
       enable = true;

@@ -38,8 +38,8 @@
       };
 
       server_names = [
-        "cloudflare-family"
-        "cloudflare-family-ipv6"
+        "cloudflare"
+        "cloudflare-ipv6"
       ];
 
     };
