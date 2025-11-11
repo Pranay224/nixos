@@ -1,7 +1,7 @@
 {
   home.username = "pranay";
   home.homeDirectory = "/home/pranay";
-  
+
   imports = [
     ./alacritty.nix
     ./waybar.nix

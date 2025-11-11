@@ -32,11 +32,7 @@ in
     '';
 
     shellAliases = {
-      "@" = "history";
-      "g" = "grep";
       "shutdown" = "shutdown now";
-      "Hyprland" = "dbus-launch --exit-with-session Hyprland";
-      "hyprland" = "Hyprland";
       "cat" = "bat";
     };
 
