@@ -7,7 +7,8 @@
     ./env.nix
     ./fonts.nix
     ./programs.nix
-    ./postgres.nix
+    ./db.nix
     ./virtualization.nix
+    ./power.nix
   ];
 }

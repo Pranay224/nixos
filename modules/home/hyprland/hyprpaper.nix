@@ -1,6 +1,6 @@
 {
   services.hyprpaper = {
-    enable = false;
+    enable = true;
     settings = {
       preload = [ "/home/pranay/Pictures/wallpaper.png" ];
       wallpaper = [ "eDP-1,/home/pranay/Pictures/wallpaper.png" ];

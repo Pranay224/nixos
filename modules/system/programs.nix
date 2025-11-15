@@ -16,8 +16,6 @@
   users.groups.wireshark.members = [ "pranay" ];
 
   services = {
-    tlp.enable = true;
-
     pipewire = {
       enable = true;
       pulse.enable = true;

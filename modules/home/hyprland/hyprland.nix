@@ -172,7 +172,7 @@
         "rfkill unblock wlan"
         "hypridle"
         "hyprctl setcursor catppuccin-mocha-dark-cursors 24"
-        "${pkgs.mpvpaper}/bin/mpvpaper -pf -o 'no-audio loop' ALL /home/pranay/Pictures/snowy_forest.mp4"
+        # "${pkgs.mpvpaper}/bin/mpvpaper -pf -o 'no-audio loop' ALL /home/pranay/Pictures/snowy_forest.mp4"
       ];
     };
   };

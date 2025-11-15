@@ -7,6 +7,6 @@
       efi.canTouchEfiVariables = true;
     };
     initrd.kernelModules = [ "amdgpu" ];
-    kernelPackages = pkgs.linuxPackages_lqx;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }

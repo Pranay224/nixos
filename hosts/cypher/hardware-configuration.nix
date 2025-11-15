@@ -19,7 +19,12 @@
     "rtsx_pci_sdmmc"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [
+    "kvm-amd"
+    "amd-pstate=active"
+    "amd_pstate.shared_mem=1"
+  ];
+  boot.kernelParams = [ "initcall_blacklist=acpi_cpufreq_init" ];
   boot.extraModulePackages = [ ];
 
   networking.useDHCP = lib.mkDefault true;
